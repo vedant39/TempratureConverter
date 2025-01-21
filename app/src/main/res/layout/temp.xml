@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RadioButton
+        android:id="@+id/celcius"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="25dp"
+        android:text="Celcius"
+        app:layout_constraintBottom_toTopOf="@+id/fahrenheit"
+        app:layout_constraintEnd_toEndOf="@+id/resetButton"
+        app:layout_constraintStart_toStartOf="@+id/fahrenheit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="89dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="7dp"
+        android:layout_weight="1"
+        android:text="Reset"
+        app:layout_constraintBottom_toTopOf="@+id/exitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertButton" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="111dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:text="Convert"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
+        app:layout_constraintStart_toStartOf="@+id/resetButton"
+        app:layout_constraintTop_toBottomOf="@+id/tempratureInput" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="141dp"
+        android:layout_weight="1"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/resetButton"
+        app:layout_constraintStart_toStartOf="@+id/resetButton"
+        app:layout_constraintTop_toBottomOf="@+id/resetButton" />
+
+    <RadioButton
+        android:id="@+id/kelvin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="33dp"
+        android:text="Kelvin"
+        app:layout_constraintBottom_toTopOf="@+id/tempratureInput"
+        app:layout_constraintEnd_toEndOf="@+id/exitButton"
+        app:layout_constraintStart_toStartOf="@+id/fahrenheit"
+        app:layout_constraintTop_toBottomOf="@+id/fahrenheit" />
+
+    <RadioButton
+        android:id="@+id/fahrenheit"
+        android:layout_width="114dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="24dp"
+        android:text="Fahrenheit"
+        app:layout_constraintBottom_toTopOf="@+id/kelvin"
+        app:layout_constraintEnd_toStartOf="@+id/tempratureOutput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celcius"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/tempratureOutput"
+        android:layout_width="113dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="62dp"
+        android:hint="Output"
+        android:inputType="none"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tempratureInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tempratureInput" />
+
+    <EditText
+        android:id="@+id/tempratureInput"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="29dp"
+        android:hint="Enter temperature"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/convertButton"
+        app:layout_constraintEnd_toStartOf="@+id/tempratureOutput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kelvin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-74dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
